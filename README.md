@@ -1,4 +1,4 @@
-# mqtt_gpb_client
+# SPoT Push API sample client and GPB binding codes generator
 MQTT client for parsing GPB message packets
 
 The intent of this sample set of codes is to guide would-be third-party
