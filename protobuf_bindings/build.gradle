@@ -1,0 +1,18 @@
+apply plugin: "protobuf"
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.andrewkroh.gradle:gradle-protobuf-plugin:0.4.0'
+    }
+}
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+version = "1.0.0"
+description = "SPoT Google Protobuf language binding classes generator"
+
+defaultTasks "clean", "compileProto"

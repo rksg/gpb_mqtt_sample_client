@@ -1,0 +1,19 @@
+syntax = "proto2";
+option java_package="com.ruckuswireless.spot.proto";
+option java_outer_classname = "SpotLocations";
+option java_generate_equals_and_hash = true;
+
+message Locations {
+	extensions 1001 to max;
+
+  // An outlier is defined when x = y = 0
+  message Location {
+    optional string venue_id          = 1; // ID of the Venue
+    optional string mac               = 2; // Detected/Located device MAC address
+    optional float  x                 = 3; // x-coordinates of the detected device (possible to be 0)
+    optional float  y                 = 4; // y-coordinates of the detected device (possible to be 0)
+    optional uint32 floor_number      = 5; // positive integer of the floor number where the device is detected
+    optional uint32 timestamp         = 6; // Unix timestamp when the device is detected (even when it is an outlier)
+  }
+  repeated Location locations = 1;
+}

@@ -1,0 +1,22 @@
+apply plugin: "java"
+apply plugin: "application"
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+group = "com.ruckuswireless.lbs"
+version = "0.0.1"
+description = "Sample SPoT Push API client"
+mainClassName = "com.ruckuswireless.lbs.PushApiClient"
+
+defaultTasks "clean", "test", "installDist"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "com.google.protobuf:protobuf-java:2.6.1"
+    compile "org.fusesource.mqtt-client:mqtt-client:1.10"
+    compile "org.bouncycastle:bcprov-jdk15on:1.52"
+    testCompile "junit:junit:4.12"
+}
