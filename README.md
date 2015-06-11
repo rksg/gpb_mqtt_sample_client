@@ -10,7 +10,7 @@ Pre-requisites to get started:
 1. A Unix compatible Operating System (Debian Wheezy, CentOS 6.6 or Mac OSX 10.10)
 1. Download and install a compatible JDK version 1.7 (OpenJDK7, Oracle JDK 1.7.0u76, etc) (http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) [works with JDK8 as well]
 1. Download and install gradle 2.3.x (https://gradle.org/)
-1. Download and install mosquitto 1.3.5 or 1.4.1 and above broker, client and requisite libraries (http://mosquitto.org/download/)
+1. Download and install mosquitto 1.4.x broker and client and requisite libraries (http://mosquitto.org/download/)
 1. Open firewall to ports 1883 and 8883
 1. Startup local mosquitto broker using the sample mosquitto bridge configuration file under mqtt_bridge_conf directory as a starting point (the TLS PSK connectivity is provided via MQTT bridge connection to reduce client code complexity)
 1. Test that you can locally subscribe to the mqtt-bridged TLS PSK connection to venue server using the `mosquitto_sub` utility
