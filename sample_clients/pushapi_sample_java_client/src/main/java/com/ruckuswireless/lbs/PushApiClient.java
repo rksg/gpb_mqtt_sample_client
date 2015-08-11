@@ -27,7 +27,7 @@ public class PushApiClient {
             // Establish MQTT connection
             FutureConnection mqtt_conn = pac.setupMqttConnection("localhost", 1883);
             // Subscribe to interested topic
-            String[] interestedTopics = {"1.0.0/LOC/SPOT_GPB/rksg-dev/GPB_LOCR"};
+            String[] interestedTopics = {"1.0.0/LOC/SPOT_GPB/#"};
             pac.subscribeTopics(mqtt_conn, interestedTopics);
             pac.receiveMessages(mqtt_conn);
             // Get the messages.
