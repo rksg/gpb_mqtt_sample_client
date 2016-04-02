@@ -7,19 +7,19 @@ messages packed in Google Protobuf format.
 
 Pre-requisites to get started:
 ------------------------------
-1. A Unix compatible Operating System (Debian Wheezy, CentOS 6.6 or Mac OSX 10.10)
-1. Download and install a compatible JDK version 1.7 (OpenJDK7, Oracle JDK 1.7.0u76, etc) (http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) [works with JDK8 as well]
-1. Download and install gradle 2.3.x (https://gradle.org/)
+1. A Unix compatible Operating System (Debian Wheezy, Debian Jessie, CentOS 6.6, Mac OSX 10.10, Mac OSX 10.11)
+1. Download and install a compatible JDK version 1.7 or 1.8 (OpenJDK7, Oracle JDK 1.7.0u76, OpenJDK8, etc) (http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) [works with JDK8 as well]
+1. Download and install gradle 2.9.x (https://gradle.org/)
 1. Download and install mosquitto 1.4.x broker and client and requisite libraries (http://mosquitto.org/download/)
 1. Open firewall to ports 1883 and 8883
 1. Startup local mosquitto broker using the sample mosquitto bridge configuration file under mqtt_bridge_conf directory as a starting point (the TLS PSK connectivity is provided via MQTT bridge connection to reduce client code complexity)
 1. Test that you can locally subscribe to the mqtt-bridged TLS PSK connection to venue server using the `mosquitto_sub` utility
-   1. e.g. `mosquitto_sub -p 1883 -t "+/LOC/SPoT_GPB/#"`
+   1. e.g. `mosquitto_sub -p 1883 -t "1.0.0/LOC/SPoT_GPB/#"`
 1. You should see encoded messages streaming into your standard output terminal if the above mqtt bridge setup and topic subscription connection works
 
 Compile Google Protobuf Binding classes or source files to begin your client development:
 -----------------------------------------------------------------------------------------
-1. Ensure that gradle 2.3 is installed and configured to work with JDK7 and that you have internet connectivity on the development machine
+1. Ensure that gradle 2.9.x is installed and configured to work with JDK7/JDK8 and that you have internet connectivity on the development machine
 1. Change directory into protobuf_bindings
 1. Issue `gradle` and observe that you receive no error messages in your standard output terminal
 1. Compiled binding classes / source files for C++, java and python should now be generated and available under
@@ -30,7 +30,7 @@ Compile Google Protobuf Binding classes or source files to begin your client dev
 
 Compile and run sample Push API Java client:
 --------------------------------------------
-1. Ensure that gradle 2.3 is installed and configured to work with JDK7 and that you have internet connectivity on the development machine
+1. Ensure that gradle 2.9.x is installed and configured to work with JDK7 and that you have internet connectivity on the development machine
 1. Change directory into sample_clients/pushapi_sample_java_client
 1. Issue `gradle` and observe that you receive no error messages in your standard output terminal
 1. Compiled and executable code is available at sample_clients/pushapi_sample_java_client/build/install/pushapi_sample_java_client directory
