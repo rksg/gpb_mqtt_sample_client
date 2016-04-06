@@ -11,7 +11,7 @@ log_type debug
 listener 1883 localhost
 connection spot_push_api_mqtt_bridge
 address <spot_venue_server_fqdn>:8883
-topic <spot_push_api_mqtt_topic> in
+topic 1.0.0/LOC/SPOT_GPB/# in
 bridge_tls_version tlsv1
 bridge_identity <psk_identity>
 bridge_psk <psk>
