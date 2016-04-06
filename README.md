@@ -13,6 +13,8 @@ Pre-requisites to get started:
 1. Download and install mosquitto 1.4.x broker and client and requisite libraries (http://mosquitto.org/download/)
 1. Open firewall to ports 1883 and 8883
 1. Startup local mosquitto broker using the sample mosquitto bridge configuration file under mqtt_bridge_conf directory as a starting point (the TLS PSK connectivity is provided via MQTT bridge connection to reduce client code complexity)
+  1. psk_identity in the mosquitto_bridge.conf.sample file is your venue-id (e.g. vspot, rksg-dev, etc)
+  2. psk is the hexadecimal format of the MQTT Pre-shared key password you entered into your Controller (ZD or SCG) - use [this site](http://www.asciitohex.com/) to help to convert Ascii Pre-shared key in Controller to hexadecimal version
 1. Test that you can locally subscribe to the mqtt-bridged TLS PSK connection to venue server using the `mosquitto_sub` utility
    1. e.g. `mosquitto_sub -p 1883 -t "1.0.0/LOC/SPOT_GPB/#"`
 1. You should see encoded messages streaming into your standard output terminal if the above mqtt bridge setup and topic subscription connection works
