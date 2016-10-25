@@ -1,14 +1,12 @@
 pid_file /tmp/mqtt_bridge.pid
 autosave_interval 0
 autosave_on_changes false
-persistence true
-persistence_file mqtt_bridge.db
-persistence_location /tmp/
 log_dest file /tmp/mqtt_bridge.log
 log_type debug
 
 # listener for MQTT messages without PSK
-listener 1883 localhost
+port 1883
+cleansession true
 connection spot_push_api_mqtt_bridge
 address <spot_venue_server_fqdn>:8883
 topic 1.0.0/LOC/SPOT_GPB/<venue_id>/GPB_LOCR in
