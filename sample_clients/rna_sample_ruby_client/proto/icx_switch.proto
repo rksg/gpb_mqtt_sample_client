@@ -1,0 +1,19 @@
+syntax = "proto2";
+
+message PortInfo {
+  optional string name        = 1;
+  optional uint32 index       = 2;
+  optional uint32 admin_status= 3;
+  optional uint64 octets_rx   = 4;
+  optional uint64 octets_tx   = 5;
+  optional uint64 pkts_rx     = 6;
+  optional uint64 pkts_tx     = 7;
+  optional bool poe           = 8;
+}
+
+message SwitchInfo {
+  optional string name = 1;
+  optional string ip_addr = 2;
+  optional uint32 uptime = 3;
+  repeated PortInfo ports_info = 4;
+}
